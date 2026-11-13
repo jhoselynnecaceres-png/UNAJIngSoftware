@@ -1,6 +1,18 @@
-
 server:
   port: 8081
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ms_catalogo
+    username: postgres
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
 
 springdoc:
   api-docs:
@@ -8,15 +20,3 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /doc/swagger-ui.html
-
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: update
-    generate-ddl: true
-    show-sql: true
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/ms_catalogo
-    username: postgres
-    password: 12345
